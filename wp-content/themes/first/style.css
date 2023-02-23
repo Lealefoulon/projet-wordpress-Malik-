@@ -1,0 +1,44 @@
+/** 
+    Theme Name: first
+    Author: Lea
+    Description: découverte des thèmes wordpress
+*/
+
+.bg-primary{
+    background: #8a1a94 !important;
+}
+.home .card{
+    animation: apparition 1s forwards;
+    opacity : 0;
+    transform: translateX(200px);
+ }
+ 
+ .home .card-1{
+    animation-delay:  0.7s;
+ }
+ 
+ .home .card-2{
+    animation-delay:  1.4s;
+ }
+ @keyframes apparition {
+    to {opacity : 1;
+    transform: translateX(0px);}
+ }
+ 
+
+.nav-link{
+    /* color: #69518799; */
+    font-weight: bold;
+}
+
+
+.category-php{
+    background: black !important;
+    color: white !important;
+}
+
+a.nav-link:hover{
+    
+    color: rgb(12, 237, 57) !important;
+}
+
