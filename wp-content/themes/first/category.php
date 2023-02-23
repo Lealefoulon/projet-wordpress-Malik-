@@ -12,34 +12,35 @@
                 </select>
                 <input type="submit" class="btn btn-primary mt-3 btn-sm" value="trier">
             </form>
-            
+
             <?php $query = get_article_filtered("html") ?>
-            <?php $query = get_article_filtered_by_date("html") ?>
+
             <?php $query = get_article_filtered("node") ?>
             <?php $query = get_article_filtered("angular") ?>
             <?php $query = get_article_filtered_by_date("react") ?>
-            
+
         </aside>
         <div class="col">
-            <?php // var_dump($query) ?>
+            <?php // var_dump($query) 
+            ?>
             <div class="row">
-                <?php while($query->have_posts()) : ?>
+                <?php while ($query->have_posts()) : ?>
                     <?php $query->the_post() ?>
-                        <div class="col-6">
-                            <h2><?php the_title() ?></h2>
-                            <p><?php the_date() ?></p>
-                            <p><?php the_author()?></p>
-                            <?php the_post_thumbnail("large" , ["class" => "img-fluid"]) ?>
-                            <div>
-                                <?php the_excerpt() ?>
-                            </div>
-                            <?php the_category() ?>
+                    <div class="col-6">
+                        <h2><?php the_title() ?></h2>
+                        <p><?php the_date() ?></p>
+                        <p><?php the_author() ?></p>
+                        <?php the_post_thumbnail("large", ["class" => "img-fluid"]) ?>
+                        <div>
+                            <?php the_excerpt() ?>
                         </div>
-                        <?php wp_reset_postdata(); ?> 
-                        <!-- liberer la memoire si j'ai besoin de faire une requete wp_query() supplémentaire apres  -->
-                    <?php endwhile ?>
+                        <?php the_category() ?>
+                    </div>
+                    <?php wp_reset_postdata(); ?>
+                    <!-- liberer la memoire si j'ai besoin de faire une requete wp_query() supplémentaire apres  -->
+                <?php endwhile ?>
             </div>
-        </div>  
-    </div>  
+        </div>
+    </div>
 </main>
 <?php get_footer() ?>

@@ -14,7 +14,7 @@
             </form>
             
             <?php $query = get_article_filtered("html") ?>
-            <?php $query = get_article_filtered_by_date("html") ?>
+            
         </aside>
         <div class="col">
             <?php // var_dump($query) ?>
